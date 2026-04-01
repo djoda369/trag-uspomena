@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --background: #f5efe6;
+  --foreground: #2b2b2b;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1c1a18;
+    --foreground: #f5efe6;
+  }
+}
+
+@theme inline {
+  /* Osnovna pozadina / tekst */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Paleta za coloring book */
+  --color-primary: #f5efe6;
+  --color-secondary: #eadbc8;
+  --color-accent: #f28c8c;
+  --color-accent-soft: #f6c28b;
+  --color-ink: #2b2b2b;
+  --color-muted: #6b6b6b;
+
+  /* Border radius */
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-3xl: 32px;
+
+  /* Blage senke — “papir / kartica” */
+  --shadow-soft: 0 2px 10px rgb(43 43 43 / 0.06);
+  --shadow-card: 0 8px 30px rgb(43 43 43 / 0.08);
+
+  /* Inter = tekst, Poppins = naslovi (vidi @layer base) */
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-poppins);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-poppins), system-ui, sans-serif;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
 }
